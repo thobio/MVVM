@@ -70,6 +70,7 @@
 		84BBC882221BDB6F00EE13E5 = {
 			isa = PBXGroup;
 			children = (
+				84BBC8A3221BE3C100EE13E5 /* Readme.md */,
 				84BBC88D221BDB6F00EE13E5 /* MVVM */,
 				84BBC88C221BDB6F00EE13E5 /* Products */,
 				1E534B053D15BEC74EE130C5 /* Pods */,
@@ -95,7 +96,6 @@
 				84BBC895221BDB8200EE13E5 /* Assets.xcassets */,
 				84BBC897221BDB8200EE13E5 /* LaunchScreen.storyboard */,
 				84BBC89A221BDB8200EE13E5 /* Info.plist */,
-				84BBC8A3221BE3C100EE13E5 /* Readme.md */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
