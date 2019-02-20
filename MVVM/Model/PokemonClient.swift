@@ -51,13 +51,14 @@ class PokemonClient:NSObject {
             }
             newPokemon.weaknesses = weaknesses
             let pokemonNextEvolution = pokemon["next_evolution"]
-            
+            var nextEvolutions:[nextEvolution] = []
             for l in 0..<pokemonNextEvolution.count {
-                let nextEvolutions = nextEvolution()
-                nextEvolutions.num = pokemonNextEvolution[l]["num"].stringValue
-                nextEvolutions.name = pokemonNextEvolution[l]["name"].stringValue
-                newPokemon.nextEvolutions?.append(nextEvolutions)
+                let next = nextEvolution()
+                next.num = pokemonNextEvolution[l]["num"].stringValue
+                next.name = pokemonNextEvolution[l]["name"].stringValue
+                nextEvolutions.append(next)
             }
+            newPokemon.nextEvolutions = nextEvolutions
           pokemons.append(newPokemon)
         }
         return pokemons

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sPx-Zo-Q8H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Pokemon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS2-V0-IJO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cells" rowHeight="119" id="QVo-hZ-q9f" customClass="PokemonTableViewCell" customModule="MVVM" customModuleProvider="target">
@@ -84,6 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Pokemon" id="cin-GN-xlX"/>
                     <connections>
                         <outlet property="pokemonViewModel" destination="Vpb-VH-foA" id="C1w-hb-Qfl"/>
                         <outlet property="tableView" destination="sS2-V0-IJO" id="3hF-hv-yTC"/>
@@ -93,11 +94,31 @@
                 <customObject id="bOQ-hf-eiM" customClass="PokemonClient" customModule="MVVM" customModuleProvider="target"/>
                 <customObject id="Vpb-VH-foA" customClass="PokemonViewModel" customModule="MVVM" customModuleProvider="target">
                     <connections>
+                        <outlet property="dataBaseClass" destination="WH0-T2-vBo" id="XO2-1t-c8j"/>
                         <outlet property="pokemonsClient" destination="bOQ-hf-eiM" id="8t7-8T-Kc0"/>
                     </connections>
                 </customObject>
+                <customObject id="WH0-T2-vBo" customClass="PokemonCoreDataCURD" customModule="MVVM" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-798" y="-274"/>
+            <point key="canvasLocation" x="92" y="-275"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rao-Pt-q14">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sPx-Zo-Q8H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ya6-nN-JNC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="No3-2C-gDC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QiO-Of-BkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-799.20000000000005" y="-274.81259370314842"/>
         </scene>
     </scenes>
 </document>
